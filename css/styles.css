@@ -24,8 +24,8 @@
   --wa:        #25D366;
 
   /* Tipografía */
-  --display: 'Anton', 'Arial Narrow', Impact, sans-serif;
-  --body:    'Barlow', 'Helvetica Neue', sans-serif;
+  --display: 'Montserrat', 'Arial Black', system-ui, sans-serif;
+  --body:    'Poppins', 'Helvetica Neue', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', ui-monospace, monospace;
 
   /* Ritmo */
@@ -127,8 +127,8 @@ button,input,select,textarea{ font:inherit; color:inherit }
 }
 .brand__text{ display:flex; flex-direction:column; line-height:1 }
 .brand__text strong{
-  font-family:var(--display); font-size:1.4rem;
-  letter-spacing:.06em; font-weight:400;
+  font-family:var(--display); font-weight:800; font-size:1.4rem;
+  letter-spacing:.06em;
 }
 .brand__text em{
   font-family:var(--mono); font-style:normal;
@@ -292,9 +292,9 @@ button,input,select,textarea{ font:inherit; color:inherit }
 @keyframes ping{ 70%,100%{ box-shadow:0 0 0 9px rgba(37,211,102,0) } }
 
 .hero__title{
-  font-family:var(--display); font-weight:400;
-  font-size:clamp(3.4rem,11.5vw,9.5rem);
-  line-height:.85; letter-spacing:-.01em; text-transform:uppercase;
+  font-family:var(--display); font-weight:900;
+  font-size:clamp(2.7rem,6.6vw,5.5rem);
+  line-height:.94; letter-spacing:-.03em; text-transform:uppercase;
   margin-bottom:1.6rem;
 }
 .hero__title .line{ display:block }
@@ -405,7 +405,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .ticker__track{
   display:flex; gap:2.5rem; width:max-content;
   animation:slide 34s linear infinite;
-  font-family:var(--display); font-size:clamp(1.1rem,2.4vw,1.7rem);
+  font-family:var(--display); font-weight:800; font-size:clamp(1.1rem,2.4vw,1.7rem);
   letter-spacing:.05em; text-transform:uppercase;
 }
 .ticker:hover .ticker__track{ animation-play-state:paused }
@@ -419,9 +419,9 @@ button,input,select,textarea{ font:inherit; color:inherit }
   margin-bottom:1.1rem;
 }
 .sec-title{
-  font-family:var(--display); font-weight:400;
-  font-size:clamp(2.4rem,6vw,4.6rem);
-  line-height:.94; letter-spacing:-.005em; text-transform:uppercase;
+  font-family:var(--display); font-weight:900;
+  font-size:clamp(2rem,4.6vw,3.6rem);
+  line-height:1; letter-spacing:-.02em; text-transform:uppercase;
   margin-bottom:1.2rem;
 }
 .sec-title .hl{
@@ -468,7 +468,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 
 .card__num{
   position:absolute; top:1rem; right:1.35rem;
-  font-family:var(--display); font-size:4.2rem; line-height:1;
+  font-family:var(--display); font-weight:800; font-size:4.2rem; line-height:1;
   color:transparent; -webkit-text-stroke:1px var(--steel-l);
   transition:-webkit-text-stroke-color .4s;
 }
@@ -493,7 +493,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .card:hover .card__art img{ transform:scale(1.08); filter:grayscale(0) contrast(1.05) }
 
 .card h3{
-  font-family:var(--display); font-weight:400;
+  font-family:var(--display); font-weight:800;
   font-size:1.75rem; letter-spacing:.02em; text-transform:uppercase;
   margin-bottom:.7rem;
 }
@@ -545,7 +545,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   width:2px; background:rgba(0,0,0,.18);
 }
 .stat__num{
-  display:block; font-family:var(--display); font-weight:400;
+  display:block; font-family:var(--display); font-weight:800;
   font-size:clamp(2.8rem,6vw,4.6rem); line-height:1;
   letter-spacing:-.01em; font-variant-numeric:tabular-nums;
 }
@@ -611,7 +611,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   letter-spacing:.16em; text-transform:uppercase; color:var(--ash-dim);
 }
 .specs b{
-  font-family:var(--display); font-weight:400; font-size:1.2rem;
+  font-family:var(--display); font-weight:800; font-size:1.2rem;
   letter-spacing:.03em; text-transform:uppercase; color:var(--white);
 }
 .specs li:hover b{ color:var(--volt) }
@@ -647,7 +647,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   padding:.28rem .55rem; margin-bottom:1.1rem;
 }
 .step h3{
-  font-family:var(--display); font-weight:400; font-size:1.4rem;
+  font-family:var(--display); font-weight:800; font-size:1.4rem;
   text-transform:uppercase; letter-spacing:.02em; margin-bottom:.55rem;
 }
 .step p{ color:var(--ash); font-size:.93rem }
@@ -668,7 +668,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 }
 .quote::before{
   content:'“'; position:absolute; top:-.55rem; left:1.2rem;
-  font-family:var(--display); font-size:5.5rem; line-height:1;
+  font-family:var(--display); font-weight:800; font-size:5.5rem; line-height:1;
   color:var(--volt); opacity:.28;
 }
 .quote:hover{ transform:translateY(-6px); border-color:rgba(255,212,0,.3) }
@@ -695,7 +695,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .acc summary{
   cursor:pointer; list-style:none; padding:1.35rem 2.5rem 1.35rem 0;
   position:relative;
-  font-family:var(--display); font-weight:400;
+  font-family:var(--display); font-weight:800;
   font-size:clamp(1.1rem,2.2vw,1.4rem);
   letter-spacing:.02em; text-transform:uppercase;
   transition:color .25s;
@@ -742,7 +742,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   margin-bottom:.35rem;
 }
 .contact__list a{
-  font-family:var(--display); font-size:1.5rem; letter-spacing:.03em;
+  font-family:var(--display); font-weight:800; font-size:1.5rem; letter-spacing:.03em;
   width:fit-content; position:relative; transition:color .25s;
 }
 .contact__list a:hover{ color:var(--volt) }
@@ -760,7 +760,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   box-shadow:0 50px 80px -50px #000;
 }
 .form__head{
-  font-family:var(--display); font-size:1.5rem;
+  font-family:var(--display); font-weight:800; font-size:1.5rem;
   text-transform:uppercase; letter-spacing:.03em;
   padding-bottom:1.2rem; margin-bottom:1.6rem;
   border-bottom:2px solid var(--volt);
@@ -820,7 +820,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .ftr__brand{ display:flex; gap:1.1rem; align-items:center }
 .ftr__brand img{ width:68px; height:68px; flex:none }
 .ftr__brand p{ font-size:.94rem; line-height:1.55 }
-.ftr__brand strong{ font-family:var(--display); font-weight:400; font-size:1.25rem; letter-spacing:.05em }
+.ftr__brand strong{ font-family:var(--display); font-weight:800; font-size:1.25rem; letter-spacing:.05em }
 .ftr__brand span{ font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; color:var(--ash-dim) }
 
 .ftr__nav{ display:flex; flex-direction:column; gap:.65rem }
@@ -833,7 +833,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 
 .ftr__contact{ display:flex; flex-direction:column; gap:.35rem }
 .ftr__contact > a{
-  font-family:var(--display); font-size:1.55rem; letter-spacing:.04em;
+  font-family:var(--display); font-weight:800; font-size:1.55rem; letter-spacing:.04em;
   width:fit-content; transition:color .25s;
 }
 .ftr__contact > a:hover{ color:var(--volt) }
@@ -928,7 +928,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   .nav.is-open{ transform:none }
   .nav a{ font-size:1rem }
   .nav__cta{ width:100% }
-  .hero__title{ font-size:clamp(3rem,15vw,5rem) }
+  .hero__title{ font-size:clamp(2.4rem,10.5vw,3.8rem) }
   .hero__cta .btn{ width:100% }
   .chip--red{ right:-1% } .chip--volt{ left:-1% }
   .stat + .stat::before{ display:none }
