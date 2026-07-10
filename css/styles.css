@@ -6,6 +6,7 @@
 :root{
   /* Superficies */
   --void:      #0B0B0C;
+  --ink:       #0B0B0C;   /* texto sobre amarillo — negro fijo en ambos temas */
   --carbon:    #131317;
   --carbon-2:  #191920;
   --steel:     #24242C;
@@ -35,7 +36,7 @@
 
   --ease: cubic-bezier(.16,.84,.32,1);
   --hazard: repeating-linear-gradient(45deg,
-              var(--volt) 0 14px, var(--void) 14px 28px);
+              var(--volt) 0 14px, var(--ink) 14px 28px);
 }
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0 }
@@ -63,7 +64,7 @@ img,svg{ display:block; max-width:100% }
 a{ color:inherit; text-decoration:none }
 button,input,select,textarea{ font:inherit; color:inherit }
 
-::selection{ background:var(--volt); color:var(--void) }
+::selection{ background:var(--volt); color:var(--ink) }
 
 :focus-visible{
   outline:2px solid var(--volt);
@@ -73,7 +74,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 
 .skip-link{
   position:absolute; left:1rem; top:-100px; z-index:200;
-  background:var(--volt); color:var(--void);
+  background:var(--volt); color:var(--ink);
   padding:.6rem 1rem; font-weight:700; border-radius:2px;
   transition:top .2s;
 }
@@ -152,7 +153,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .nav a:hover::after{ transform:scaleX(1); transform-origin:left }
 
 .nav__cta{
-  background:var(--volt); color:var(--void) !important;
+  background:var(--volt); color:var(--ink) !important;
   padding:.7rem 1.15rem !important; font-weight:600;
   clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
   transition:background .25s, transform .25s var(--ease) !important;
@@ -209,7 +210,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .btn .ico--arrow{ fill:none; transition:transform .3s var(--ease) }
 .btn:hover .ico--arrow{ transform:translateX(4px) }
 
-.btn--volt{ background:var(--volt); color:var(--void) }
+.btn--volt{ background:var(--volt); color:var(--ink) }
 .btn--volt:hover{
   background:var(--volt-hot); transform:translateY(-3px);
   box-shadow:0 16px 30px -14px rgba(255,212,0,.7);
@@ -388,7 +389,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);
 }
 .chip--volt{
-  bottom:16%; left:-4%; background:var(--volt); color:var(--void);
+  bottom:16%; left:-4%; background:var(--volt); color:var(--ink);
   animation-delay:1.4s;
   clip-path:polygon(12px 0,100% 0,100% 100%,0 100%);
 }
@@ -412,7 +413,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 
 /* ══════════════════════════════════ TICKER */
 .ticker{
-  background:var(--volt); color:var(--void);
+  background:var(--volt); color:var(--ink);
   padding:.85rem 0; overflow:hidden;
   border-block:2px solid var(--void);
 }
@@ -540,7 +541,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 
 /* ══════════════════════════════════ STATS */
 .stats{
-  background:var(--volt); color:var(--void);
+  background:var(--volt); color:var(--ink);
   padding-block:clamp(3rem,6vw,4.5rem);
   border-block:2px solid var(--void);
   position:relative; overflow:hidden;
@@ -661,7 +662,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .step__n{
   display:inline-block; font-family:var(--mono); font-weight:600;
   font-size:.75rem; letter-spacing:.16em;
-  color:var(--void); background:var(--volt);
+  color:var(--ink); background:var(--volt);
   padding:.28rem .55rem; margin-bottom:1.1rem;
 }
 .step h3{
@@ -863,7 +864,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   transition:background .25s, color .25s, border-color .25s, transform .25s var(--ease);
 }
 .ftr__social a:hover{
-  background:var(--volt); color:var(--void);
+  background:var(--volt); color:var(--ink);
   border-color:var(--volt); transform:translateY(-3px);
 }
 
@@ -905,7 +906,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 }
 .totop svg{ width:20px; height:20px }
 .totop.is-on{ opacity:1; pointer-events:auto; transform:none }
-.totop:hover{ background:var(--volt); color:var(--void) }
+.totop:hover{ background:var(--volt); color:var(--ink) }
 
 /* ══════════════════════════════════ REVEAL */
 [data-reveal]{
@@ -951,7 +952,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   position:absolute; top:.85rem; left:.85rem; z-index:2;
   font-family:var(--mono); font-size:.64rem; font-weight:600;
   letter-spacing:.14em; text-transform:uppercase;
-  background:var(--volt); color:var(--void); padding:.35rem .6rem;
+  background:var(--volt); color:var(--ink); padding:.35rem .6rem;
 }
 .post__body{ display:flex; flex-direction:column; flex:1; padding:1.5rem 1.5rem 1.6rem }
 .post__meta{
@@ -1091,14 +1092,13 @@ button,input,select,textarea{ font:inherit; color:inherit }
   background:radial-gradient(600px circle at 50% 0%,rgba(255,212,0,.22),transparent 60%);
 }
 
-/* Acentos amarillos que son TEXTO → amarillo oscuro legible */
+/* En claro NO hay letras amarillas: los acentos pasan a tinta oscura.
+   El amarillo se conserva solo como relleno (bloques) o como resaltador. */
 :root[data-theme="light"] .kicker,
-:root[data-theme="light"] .sec-title .hl,
 :root[data-theme="light"] .card > p strong,
 :root[data-theme="light"] .card__link,
 :root[data-theme="light"] .post__link,
 :root[data-theme="light"] .article__meta,
-:root[data-theme="light"] .hero__lead strong ~ strong,
 :root[data-theme="light"] .hero__trust b,
 :root[data-theme="light"] .eyebrow .sep,
 :root[data-theme="light"] .contact__list a:hover,
@@ -1111,15 +1111,23 @@ button,input,select,textarea{ font:inherit; color:inherit }
 :root[data-theme="light"] .acc[open] summary,
 :root[data-theme="light"] .btn--ghost:hover,
 :root[data-theme="light"] .theme:hover,
-:root[data-theme="light"] .article__back:hover{ color:var(--volt-deep) }
+:root[data-theme="light"] .ftr__contact > a:hover,
+:root[data-theme="light"] .article__back:hover{ color:var(--white) }
 
-/* Título del hero: la línea "amarilla" pasa a tinta con subrayado marcador */
+/* El kicker en claro: gris para no competir con el título */
+:root[data-theme="light"] .kicker{ color:var(--ash) }
+
+/* Comilla decorativa de testimonios: neutral en claro (no amarilla) */
+:root[data-theme="light"] .quote::before{ color:var(--steel-l); opacity:.9 }
+
+/* Palabra destacada del título y línea del hero: resaltador amarillo,
+   letra oscura (sin letras amarillas) */
+:root[data-theme="light"] .sec-title .hl,
 :root[data-theme="light"] .line--volt{
-  display:inline-block;               /* el marcador se ciñe a la palabra */
-  color:var(--white);
-  text-shadow:none;
-  background:linear-gradient(transparent 60%, var(--volt) 60% 92%, transparent 92%);
-  padding-inline:.08em;
+  display:inline; color:var(--white); text-shadow:none;
+  background:linear-gradient(transparent 58%, var(--volt) 58% 93%, transparent 93%);
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  padding-inline:.06em;
 }
 
 /* Artículo del blog: prosa en tinta oscura */

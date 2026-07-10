@@ -19,7 +19,6 @@ def head(title, desc, canonical, p, og_img):
 <meta name="theme-color" content="#0B0B0C">
 <script>
   (function(){{try{{var t=localStorage.getItem('servitek-theme');
-  if(!t){{t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}}
   if(t==='light')document.documentElement.setAttribute('data-theme','light');}}catch(e){{}}}})();
 </script>
 <link rel="icon" href="{p}assets/favicon.svg" type="image/svg+xml">
