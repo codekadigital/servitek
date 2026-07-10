@@ -95,7 +95,7 @@ cliente antes de que el sitio salga a producción:
 | `index.html` → sección `.stats` | 12 años, 1500 motores, 24 h, 6 meses de garantía |
 | `index.html` → sección `.quotes` | Los 3 testimonios son inventados. Usar reseñas reales de Facebook |
 | `index.html` → `.faq` | Plazos y política de garantía |
-| `index.html` → `<link rel="canonical">` y `og:image` | Apuntan a `servitek.pe`, cambiar al dominio real |
+| `index.html`, `sitemap.xml`, `robots.txt` → URLs | Apuntan a `codekadigital.github.io/servitek`; cambiar a `gruposervitek.pe` cuando el dominio esté activo |
 
 Los dos afiches muestran páginas de Facebook distintas (`serelectacna` y
 `servitek.reparaciones`). El sitio usa `servitek.reparaciones`; confirmar cuál es la vigente.
