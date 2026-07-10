@@ -15,16 +15,37 @@ python3 -m http.server 8080
 El sitio ya está en vivo en **GitHub Pages**: https://codekadigital.github.io/servitek/
 Cada `git push` a `main` lo actualiza solo en 1-2 minutos.
 
-Para verlo con dominio propio (ej. `servitek.pe`):
+### Conectar el dominio servitek.pe (orden seguro)
 
-1. Compra el dominio (Punto.pe para `.pe`, o Namecheap/GoDaddy para `.com`).
-2. Crea un archivo `CNAME` en la raíz del repo con el dominio (ej. `servitek.pe`).
-3. En el panel de tu proveedor de dominio, apunta los DNS a GitHub Pages
-   (4 registros `A` a las IP de GitHub, o un `CNAME` a `codekadigital.github.io`).
-4. En GitHub → Settings → Pages, escribe el dominio y activa "Enforce HTTPS".
+Hazlo en este orden para no dejar el sitio inaccesible durante la propagación:
 
-GitHub emite el certificado HTTPS gratis. Alternativa sin tocar DNS a mano:
-subir la carpeta a **Netlify** (arrastrar y soltar) y conectar el dominio ahí.
+**Paso 1 — Comprar el dominio.** `servitek.pe` se registra en https://punto.pe
+(unos S/ 45-90 al año).
+
+**Paso 2 — Configurar los DNS** en el panel del dominio, con estos registros
+(son las IP oficiales y estables de GitHub Pages):
+
+```
+Tipo   Nombre   Valor
+A      @        185.199.108.153
+A      @        185.199.109.153
+A      @        185.199.110.153
+A      @        185.199.111.153
+CNAME  www      codekadigital.github.io.
+```
+
+(Opcional, para IPv6, añadir registros AAAA a
+`2606:50c0:8000::153`, `...8001::153`, `...8002::153`, `...8003::153`.)
+
+**Paso 3 — Activar el dominio.** Crear un archivo `CNAME` en la raíz del repo
+con una sola línea: `servitek.pe`. Luego, en GitHub → Settings → Pages, escribir
+`servitek.pe` en "Custom domain" y marcar **Enforce HTTPS** (el certificado es gratis).
+
+**Paso 4 — Actualizar las URLs.** Cambiar `canonical`, `og:url`, `sitemap.xml`
+y `robots.txt` de `codekadigital.github.io/servitek` a `servitek.pe`.
+
+Alternativa sin tocar DNS a mano: subir la carpeta a **Netlify** (arrastrar y
+soltar) y conectar el dominio desde su panel.
 
 ## Estructura
 
