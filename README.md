@@ -15,11 +15,11 @@ python3 -m http.server 8080
 El sitio ya está en vivo en **GitHub Pages**: https://codekadigital.github.io/servitek/
 Cada `git push` a `main` lo actualiza solo en 1-2 minutos.
 
-### Conectar el dominio servitek.pe (orden seguro)
+### Conectar el dominio gruposervitek.pe (orden seguro)
 
 Hazlo en este orden para no dejar el sitio inaccesible durante la propagación:
 
-**Paso 1 — Comprar el dominio.** `servitek.pe` se registra en https://punto.pe
+**Paso 1 — Comprar el dominio.** `gruposervitek.pe` se registra en https://punto.pe
 (unos S/ 45-90 al año).
 
 **Paso 2 — Configurar los DNS** en el panel del dominio, con estos registros
@@ -38,11 +38,11 @@ CNAME  www      codekadigital.github.io.
 `2606:50c0:8000::153`, `...8001::153`, `...8002::153`, `...8003::153`.)
 
 **Paso 3 — Activar el dominio.** Crear un archivo `CNAME` en la raíz del repo
-con una sola línea: `servitek.pe`. Luego, en GitHub → Settings → Pages, escribir
-`servitek.pe` en "Custom domain" y marcar **Enforce HTTPS** (el certificado es gratis).
+con una sola línea: `gruposervitek.pe`. Luego, en GitHub → Settings → Pages, escribir
+`gruposervitek.pe` en "Custom domain" y marcar **Enforce HTTPS** (el certificado es gratis).
 
 **Paso 4 — Actualizar las URLs.** Cambiar `canonical`, `og:url`, `sitemap.xml`
-y `robots.txt` de `codekadigital.github.io/servitek` a `servitek.pe`.
+y `robots.txt` de `codekadigital.github.io/servitek` a `gruposervitek.pe`.
 
 Alternativa sin tocar DNS a mano: subir la carpeta a **Netlify** (arrastrar y
 soltar) y conectar el dominio desde su panel.
