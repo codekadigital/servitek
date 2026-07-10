@@ -48,19 +48,20 @@ Los dos afiches muestran páginas de Facebook distintas (`serelectacna` y
 
 ## Imágenes
 
-Las ilustraciones de `assets/` son SVG que dibujé a mano (estátor, electrobomba,
-tablero, electrodomésticos, logo). Sirven como referencia y funcionan bien en producción
-porque escalan sin pixelarse y pesan poco.
+El sitio usa fotos reales del cliente, optimizadas a WebP:
 
-Dicho esto, **para un negocio de servicios técnicos las fotos reales convierten mucho más**.
-Recomiendo reemplazar, en este orden de prioridad:
+| Archivo | Dónde aparece |
+|---|---|
+| `logo-servitek.png` | Logo real, recortado en círculo con fondo transparente (header y footer) |
+| `foto-diagnostico.webp` | Hero — técnico midiendo un tablero |
+| `foto-motores.webp` | Tarjeta "Motores y bombas" y marco de Rebobinado |
+| `foto-tableros.webp` | Tarjeta "Instalaciones y tableros" |
+| `foto-electrodomesticos.webp` | Tarjeta "Electrodomésticos" |
+| `og-servitek.png` | Vista previa al compartir (1200×630) |
 
-1. `.hero__art` → foto de un estátor rebobinado por ustedes, fondo oscuro.
-2. `.card__art` (3) → una foto por servicio: motor en el banco, tablero armado, técnico en domicilio.
-3. `.rewind__frame` → un antes/después de un rebobinado.
-
-Al cambiar a `<img>` con fotos, usar `loading="lazy"` y `width`/`height` explícitos, y
-quitar la animación `spin` del estátor (se ve rara en una foto).
+Para reemplazar cualquiera: sustituye el `.webp` por otro con el mismo nombre (o cambia
+el `src` en `index.html`) y actualiza los atributos `width`/`height` a las dimensiones
+reales de la nueva foto. Las fotos se optimizaron con `sharp` (WebP calidad 80).
 
 ## Accesibilidad y rendimiento
 
