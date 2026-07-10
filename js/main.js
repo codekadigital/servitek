@@ -8,7 +8,8 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   /* ── Año actual ───────────────────────────────────────────── */
-  $('#year').textContent = new Date().getFullYear();
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ── Header: fondo al hacer scroll + barra de progreso ───── */
   const hdr = $('#hdr');
@@ -128,6 +129,8 @@
   const form = $('#form');
   const note = $('#formNote');
 
+  if (form) {
+
   const rules = {
     nombre: (v) => (v.trim().length >= 3 ? '' : 'Escribe tu nombre completo.'),
     telefono: (v) =>
@@ -194,4 +197,6 @@
       note.onclick = () => { location.href = url; };
     }
   });
+
+  } /* fin if (form) */
 })();

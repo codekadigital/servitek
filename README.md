@@ -10,17 +10,50 @@ python3 -m http.server 8080
 # abrir http://localhost:8080
 ```
 
-Para publicarlo basta con subir la carpeta completa a Netlify, Vercel, GitHub Pages
-o cualquier hosting compartido (Hostinger, cPanel). No requiere Node ni PHP.
+## Publicar
+
+El sitio ya está en vivo en **GitHub Pages**: https://codekadigital.github.io/servitek/
+Cada `git push` a `main` lo actualiza solo en 1-2 minutos.
+
+Para verlo con dominio propio (ej. `servitek.pe`):
+
+1. Compra el dominio (Punto.pe para `.pe`, o Namecheap/GoDaddy para `.com`).
+2. Crea un archivo `CNAME` en la raíz del repo con el dominio (ej. `servitek.pe`).
+3. En el panel de tu proveedor de dominio, apunta los DNS a GitHub Pages
+   (4 registros `A` a las IP de GitHub, o un `CNAME` a `codekadigital.github.io`).
+4. En GitHub → Settings → Pages, escribe el dominio y activa "Enforce HTTPS".
+
+GitHub emite el certificado HTTPS gratis. Alternativa sin tocar DNS a mano:
+subir la carpeta a **Netlify** (arrastrar y soltar) y conectar el dominio ahí.
 
 ## Estructura
 
 ```
-index.html              Todo el contenido
+index.html              Página principal
+blog.html               Listado del blog
+blog/*.html             Artículos individuales
 css/styles.css          Diseño completo
 js/main.js              Scroll reveal, contadores, menú, formulario
-assets/*.svg            Ilustraciones vectoriales (generadas, no fotos)
+assets/                 Logo, fotos (WebP) e imagen de compartir
+tools/gen_blog.py       Generador del blog (fuente de las páginas del blog)
+sitemap.xml, robots.txt Para indexación en Google
 ```
+
+## Blog: cómo agregar un artículo
+
+Las páginas del blog se generan desde un solo archivo para que el encabezado,
+el pie y el estilo sean idénticos en todas. Para publicar un artículo nuevo:
+
+1. Abre `tools/gen_blog.py` y copia uno de los bloques de la lista `POSTS`.
+2. Cambia `slug` (nombre del archivo, sin espacios ni tildes), `title`,
+   `cat`, `date`, `read`, `cover` (una foto de `assets/`), `excerpt` y `body`
+   (el texto en HTML: `<p>`, `<h2>`, `<ul>`, etc.).
+3. Ejecuta `python3 tools/gen_blog.py`. Regenera `blog.html` y los artículos.
+4. Agrega la URL nueva a `sitemap.xml` y sube los cambios.
+
+Si prefieres no tocar Python, también puedes **duplicar un archivo de `blog/`**,
+renombrarlo y editar el texto a mano. Recuerda actualizar también la tarjeta
+correspondiente en `blog.html` y en la sección Blog de `index.html`.
 
 ## Cómo funciona el formulario
 
