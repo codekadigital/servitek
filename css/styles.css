@@ -167,6 +167,20 @@ button,input,select,textarea{ font:inherit; color:inherit }
   transition:width .1s linear;
 }
 
+.theme{
+  flex:none; display:grid; place-items:center;
+  width:42px; height:42px; cursor:pointer;
+  background:transparent; border:1px solid var(--steel-l); border-radius:50%;
+  color:var(--white);
+  transition:color .25s, border-color .25s, background .25s, transform .5s var(--ease);
+}
+.theme:hover{ color:var(--volt); border-color:var(--volt); transform:rotate(25deg) }
+.theme svg{ width:20px; height:20px; grid-area:1/1; transition:opacity .3s, transform .4s var(--ease) }
+.theme__moon{ opacity:0; transform:scale(.4) rotate(-40deg) }
+.theme__sun{ opacity:1 }
+:root[data-theme="light"] .theme__sun{ opacity:0; transform:scale(.4) rotate(40deg) }
+:root[data-theme="light"] .theme__moon{ opacity:1; transform:none }
+
 .burger{
   display:none; background:none; border:0; cursor:pointer;
   width:40px; height:34px; padding:6px; flex-direction:column;
@@ -1031,6 +1045,94 @@ button,input,select,textarea{ font:inherit; color:inherit }
   font-family:var(--mono); font-size:.72rem; letter-spacing:.1em;
   text-transform:uppercase; color:var(--ash-dim);
 }
+
+/* ══════════════════════════════════ TEMA CLARO */
+:root[data-theme="light"]{
+  --void:      #ECEBE4;
+  --carbon:    #FFFFFF;
+  --carbon-2:  #F6F5EF;
+  --steel:     #DEDCD1;
+  --steel-l:   #C3C1B4;
+  --white:     #17171B;   /* tinta principal */
+  --ash:       #52525A;
+  --ash-dim:   #83837A;
+  --volt:      #FFD400;    /* se mantiene para rellenos */
+  --volt-hot:  #FFDE33;
+  --volt-deep: #875A00;    /* amarillo legible para texto sobre claro */
+  --arc:       #D62E17;
+  --wa:        #1DAE54;
+  color-scheme:light;
+}
+
+/* Texturas: suavizar sobre fondo claro */
+:root[data-theme="light"] .grain{ opacity:.03 }
+:root[data-theme="light"] .spotlight{
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,-20%),
+             rgba(255,212,0,.14), transparent 70%);
+}
+
+/* Header translúcido claro */
+:root[data-theme="light"] .hdr--stuck{
+  background:rgba(255,255,255,.82);
+  box-shadow:0 1px 0 rgba(0,0,0,.06), 0 18px 40px -28px rgba(0,0,0,.4);
+}
+
+/* Rejillas y líneas técnicas: pasar de blanco a negro tenue */
+:root[data-theme="light"] .hero__grid{
+  background-image:
+    linear-gradient(rgba(0,0,0,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.06) 1px,transparent 1px);
+}
+:root[data-theme="light"] .stats::before{
+  background-image:radial-gradient(rgba(0,0,0,.13) 1px,transparent 1px);
+}
+:root[data-theme="light"] .card__list li{ border-top-color:rgba(0,0,0,.07) }
+:root[data-theme="light"] .card::before{
+  background:radial-gradient(600px circle at 50% 0%,rgba(255,212,0,.22),transparent 60%);
+}
+
+/* Acentos amarillos que son TEXTO → amarillo oscuro legible */
+:root[data-theme="light"] .kicker,
+:root[data-theme="light"] .sec-title .hl,
+:root[data-theme="light"] .card > p strong,
+:root[data-theme="light"] .card__link,
+:root[data-theme="light"] .post__link,
+:root[data-theme="light"] .article__meta,
+:root[data-theme="light"] .hero__lead strong ~ strong,
+:root[data-theme="light"] .hero__trust b,
+:root[data-theme="light"] .eyebrow .sep,
+:root[data-theme="light"] .contact__list a:hover,
+:root[data-theme="light"] .contact__list li:nth-child(2) a:hover,
+:root[data-theme="light"] .ftr__made,
+:root[data-theme="light"] .ftr__nav a:hover,
+:root[data-theme="light"] .prose a,
+:root[data-theme="light"] .specs li:hover b,
+:root[data-theme="light"] .acc summary:hover,
+:root[data-theme="light"] .acc[open] summary,
+:root[data-theme="light"] .btn--ghost:hover,
+:root[data-theme="light"] .theme:hover,
+:root[data-theme="light"] .article__back:hover{ color:var(--volt-deep) }
+
+/* Título del hero: la línea "amarilla" pasa a tinta con subrayado marcador */
+:root[data-theme="light"] .line--volt{
+  display:inline-block;               /* el marcador se ciñe a la palabra */
+  color:var(--white);
+  text-shadow:none;
+  background:linear-gradient(transparent 60%, var(--volt) 60% 92%, transparent 92%);
+  padding-inline:.08em;
+}
+
+/* Artículo del blog: prosa en tinta oscura */
+:root[data-theme="light"] .prose{ color:#2C2C30 }
+
+/* Marca del logo tiene fondo transparente: sin cambios necesarios */
+/* Números outline de tarjetas: sobre la franja oscura de la foto siguen bien */
+
+/* Sombras un poco menos agresivas en claro */
+:root[data-theme="light"] .card:hover,
+:root[data-theme="light"] .post:hover,
+:root[data-theme="light"] .quote:hover{ box-shadow:0 40px 60px -44px rgba(0,0,0,.45) }
+:root[data-theme="light"] .form{ box-shadow:0 50px 80px -55px rgba(0,0,0,.4) }
 
 /* ══════════════════════════════════ RESPONSIVE */
 @media (max-width:1000px){

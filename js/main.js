@@ -11,6 +11,27 @@
   const yearEl = $('#year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ── Tema claro / oscuro ──────────────────────────────────── */
+  const themeBtn = $('#theme');
+  if (themeBtn) {
+    const root = document.documentElement;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const syncBtn = () => {
+      const light = root.getAttribute('data-theme') === 'light';
+      themeBtn.setAttribute('aria-pressed', String(light));
+      themeBtn.setAttribute('aria-label', light ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
+      if (meta) meta.setAttribute('content', light ? '#ECEBE4' : '#0B0B0C');
+    };
+    syncBtn();
+    themeBtn.addEventListener('click', () => {
+      const light = root.getAttribute('data-theme') === 'light';
+      if (light) root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('servitek-theme', light ? 'dark' : 'light'); } catch (e) {}
+      syncBtn();
+    });
+  }
+
   /* ── Header: fondo al hacer scroll + barra de progreso ───── */
   const hdr = $('#hdr');
   const progress = $('#progress');

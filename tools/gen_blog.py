@@ -17,6 +17,11 @@ def head(title, desc, canonical, p, og_img):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#0B0B0C">
+<script>
+  (function(){{try{{var t=localStorage.getItem('servitek-theme');
+  if(!t){{t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}}
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');}}catch(e){{}}}})();
+</script>
 <link rel="icon" href="{p}assets/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="article">
@@ -51,6 +56,10 @@ def header(p, home):
       <a href="{home}#faq">Preguntas</a>
       <a href="{home}#contacto" class="nav__cta">Cotizar ahora</a>
     </nav>
+    <button class="theme" id="theme" aria-label="Cambiar a modo claro" aria-pressed="false" title="Modo claro / oscuro">
+      <svg class="theme__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="theme__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
