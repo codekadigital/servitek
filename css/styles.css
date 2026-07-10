@@ -1078,6 +1078,9 @@ button,input,select,textarea{ font:inherit; color:inherit }
   box-shadow:0 1px 0 rgba(0,0,0,.06), 0 18px 40px -28px rgba(0,0,0,.4);
 }
 
+/* Pastilla del eyebrow: tenía fondo oscuro fijo → claro en modo light */
+:root[data-theme="light"] .eyebrow{ background:rgba(255,255,255,.75) }
+
 /* Rejillas y líneas técnicas: pasar de blanco a negro tenue */
 :root[data-theme="light"] .hero__grid{
   background-image:
