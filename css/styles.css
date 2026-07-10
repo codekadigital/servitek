@@ -467,12 +467,16 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .card:hover::after{ transform:scaleX(1) }
 
 .card__num{
-  position:absolute; top:1rem; right:1.35rem;
-  font-family:var(--display); font-weight:800; font-size:4.2rem; line-height:1;
-  color:transparent; -webkit-text-stroke:1px var(--steel-l);
-  transition:-webkit-text-stroke-color .4s;
+  position:absolute; right:.85rem; bottom:.35rem; z-index:2;
+  font-family:var(--display); font-weight:900; font-size:3.4rem; line-height:1;
+  color:transparent; -webkit-text-stroke:1.4px rgba(255,212,0,.85);
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
+  transition:-webkit-text-stroke-color .4s, transform .5s var(--ease);
 }
-.card:hover .card__num{ -webkit-text-stroke-color:rgba(255,212,0,.45) }
+.card:hover .card__num{
+  -webkit-text-stroke-color:var(--volt);
+  transform:translateY(-3px);
+}
 
 .card__art{
   position:relative; height:210px; margin-bottom:1.6rem;
