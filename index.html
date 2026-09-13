@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=11">
+<link rel="stylesheet" href="css/styles.css?v=12">
 
 <script type="application/ld+json">
 {
@@ -107,54 +107,64 @@
 
 <!-- ═══════════════════════════════════ SERVICIOS -->
 <section class="services" id="servicios">
-  <div class="wrap services__head">
-    <div class="services__title" data-reveal>
-      <h2 class="sec-title">Lo que reparamos</h2>
-      <a class="services__all" href="#contacto">Cotizar
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-      </a>
-    </div>
-    <div class="services__nav" data-reveal>
-      <button class="services__btn" type="button" data-dir="-1" aria-label="Anterior">Ant.</button>
-      <button class="services__btn" type="button" data-dir="1" aria-label="Siguiente">Sig.</button>
-    </div>
+  <div class="services__head" data-reveal>
+    <h2 class="services__h">Lo que reparamos. <span>Cotiza sin compromiso.</span></h2>
   </div>
 
-  <div class="services__track" id="servicesTrack" tabindex="0" aria-label="Servicios, desliza para ver más">
+  <div class="services__wrap">
+    <div class="services__track" id="servicesTrack" tabindex="0" aria-label="Servicios, desliza para ver más">
     <article class="svc" data-reveal>
+      <div class="svc__body">
+        <p class="svc__tag">Taller especializado</p>
+        <h3 class="svc__title">Motores y bombas</h3>
+        <p class="svc__text">Rebobinado, cambio de rodamientos y sellos, prueba de aislamiento y consumo. Todas las potencias.</p>
+        <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
+      </div>
       <div class="svc__art"><img src="assets/foto-motores.webp" alt="Técnico desmontando un motor eléctrico de su carcasa" width="481" height="850" loading="lazy"></div>
-      <p class="svc__label">Motores y bombas</p>
-      <p class="svc__text">Instalación, mantenimiento y <strong>rebobinado</strong> de motores eléctricos y electrobombas de todas las potencias. Cambio de rodamientos y sellos, prueba de aislamiento y consumo.</p>
-      <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
     </article>
-
     <article class="svc" data-reveal data-delay="1">
+      <div class="svc__body">
+        <p class="svc__tag">Industria y hogar</p>
+        <h3 class="svc__title">Instalaciones y tableros</h3>
+        <p class="svc__text">Tableros de fuerza y distribución, arrancadores, automatización y puesta a tierra.</p>
+        <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
+      </div>
       <div class="svc__art"><img src="assets/foto-tableros.webp" alt="Técnico con casco revisando un tablero de control industrial" width="481" height="633" loading="lazy"></div>
-      <p class="svc__label">Instalaciones y tableros</p>
-      <p class="svc__text">Instalaciones <strong>industriales y domiciliarias</strong>, armado y mantenimiento de tableros de fuerza y distribución, arrancadores, automatización y puesta a tierra.</p>
-      <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
     </article>
-
     <article class="svc" data-reveal data-delay="2">
+      <div class="svc__body">
+        <p class="svc__tag">A domicilio en Tacna</p>
+        <h3 class="svc__title">Electrodomésticos</h3>
+        <p class="svc__text">Lavadoras, secadoras y línea blanca. Diagnóstico electrónico, cambio de tarjetas y motores.</p>
+        <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
+      </div>
       <div class="svc__art"><img src="assets/foto-electrodomesticos.webp" alt="Técnico midiendo el motor compresor de un electrodoméstico" width="493" height="853" loading="lazy"></div>
-      <p class="svc__label">Electrodomésticos</p>
-      <p class="svc__text">Reparación de <strong>lavadoras, secadoras</strong> y línea blanca en general. Diagnóstico electrónico, cambio de tarjetas y motores, con atención a domicilio en Tacna.</p>
-      <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
     </article>
-
     <article class="svc" data-reveal data-delay="3">
+      <div class="svc__body">
+        <p class="svc__tag">Frío doméstico y comercial</p>
+        <h3 class="svc__title">Refrigeración</h3>
+        <p class="svc__text">Refrigeradoras, congeladoras y equipos de frío. Carga de gas, compresor y control de temperatura.</p>
+        <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
+      </div>
       <div class="svc__art"><img src="assets/foto-diagnostico.webp" alt="Técnico midiendo un tablero eléctrico con multímetro" width="658" height="1039" loading="lazy"></div>
-      <p class="svc__label">Refrigeración</p>
-      <p class="svc__text">Mantenimiento y reparación de <strong>refrigeradoras, congeladoras</strong> y equipos de frío comercial. Carga de gas, cambio de compresor y control de temperatura.</p>
-      <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
     </article>
-
     <article class="svc" data-reveal data-delay="4">
+      <div class="svc__body">
+        <p class="svc__tag">Plantas, minas y agro</p>
+        <h3 class="svc__title">Mantenimiento preventivo</h3>
+        <p class="svc__text">Inspección, medición y reporte técnico programado, antes de que la falla detenga tu operación.</p>
+        <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
+      </div>
       <div class="svc__art"><img src="assets/foto-tableros.webp" alt="Tablero eléctrico industrial en mantenimiento" width="481" height="633" loading="lazy"></div>
-      <p class="svc__label">Mantenimiento preventivo</p>
-      <p class="svc__text">Programas de <strong>mantenimiento programado</strong> para plantas, minas y agroindustria. Inspección, medición y reporte técnico antes de que la falla detenga tu operación.</p>
-      <a class="svc__link" href="#contacto">Cotizar <span aria-hidden="true">→</span></a>
     </article>
+    </div>
+    <button class="services__btn services__btn--prev" type="button" data-dir="-1" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
+    </button>
+    <button class="services__btn services__btn--next" type="button" data-dir="1" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
+    </button>
   </div>
 </section>
 
