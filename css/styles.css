@@ -702,6 +702,24 @@ button,input,select,textarea{ font:inherit; color:inherit }
   [data-reveal]{ opacity:1; transform:none }
 }
 
+/* ══════════════════════════════════ TIKTOK */
+.tiktok{ padding-block:var(--sec); background:var(--surface); border-block:1px solid var(--line) }
+.tiktok__grid{
+  display:grid; gap:clamp(2.5rem,5vw,4.5rem);
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  align-items:center;
+}
+.tiktok__panel{
+  background:var(--bg); border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:clamp(1rem,2.5vw,1.75rem); box-shadow:var(--shadow-rest);
+  overflow:hidden; min-height:320px;
+}
+.tiktok__panel iframe{ border-radius:calc(var(--r-lg) - 8px) }
+.reels{
+  display:grid; gap:1rem; justify-content:center;
+  grid-template-columns:repeat(auto-fit,325px);
+}
+
 /* ══════════════════════════════════ BLOG */
 .blog{ padding-block:var(--sec) }
 .blog__head{
@@ -817,6 +835,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 /* ══════════════════════════════════ RESPONSIVE */
 @media (max-width:1000px){
   .rewind__grid,
+  .tiktok__grid,
   .faq__grid,
   .contact__grid{ grid-template-columns:1fr }
   .rewind__badge{ right:.75rem; bottom:.75rem }

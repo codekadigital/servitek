@@ -76,6 +76,18 @@ Si prefieres no tocar Python, también puedes **duplicar un archivo de `blog/`**
 renombrarlo y editar el texto a mano. Recuerda actualizar también la tarjeta
 correspondiente en `blog.html` y en la sección Blog de `index.html`.
 
+## TikTok
+
+La sección "Míranos trabajar" incrusta el perfil `@servitek.pe` con el **embed de
+creador** oficial de TikTok, que muestra los últimos videos y se actualiza solo.
+Carga el script `https://www.tiktok.com/embed.js` (es el único recurso externo
+además de Google Fonts).
+
+Para mostrar reels concretos en vez del perfil, en `index.html` reemplaza el
+`blockquote` del perfil por un `<div class="reels">` con un `blockquote` por video
+(hay una plantilla comentada justo debajo). El `ID` es el número largo al final de
+la URL del video: `https://www.tiktok.com/@servitek.pe/video/ID`.
+
 ## Cómo funciona el formulario
 
 No hay servidor. Al enviarlo, `js/main.js` valida los campos y abre WhatsApp
@@ -127,5 +139,5 @@ reales de la nueva foto. Las fotos se optimizaron con `sharp` (WebP calidad 80).
 - Respeta `prefers-reduced-motion`: todas las animaciones se desactivan.
 - Navegable por teclado, con `skip-link` y `:focus-visible` visible.
 - Marcado `ElectricalContractor` de Schema.org para búsqueda local.
-- Único recurso externo: Google Fonts (Montserrat, Poppins).
+- Recursos externos: Google Fonts (Montserrat, Poppins) y el embed de TikTok.
   Para máxima velocidad, descargar los `.woff2` a `assets/fonts/` y auto-alojarlos.
