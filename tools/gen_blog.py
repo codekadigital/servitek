@@ -33,7 +33,7 @@ def head(title, desc, canonical, p, og_img):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{p}css/styles.css?v=9">'''
+<link rel="stylesheet" href="{p}css/styles.css?v=10">'''
 
 
 def header(p, home):

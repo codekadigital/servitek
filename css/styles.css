@@ -339,11 +339,11 @@ button,input,select,textarea{ font:inherit; color:inherit }
 /* ══════════════════════════════════ SERVICIOS (carrusel a lo ancho) */
 .services{ padding-block:var(--sec) }
 .services__head{
-  display:flex; align-items:flex-end; justify-content:space-between; gap:1.5rem;
-  margin-bottom:clamp(1.75rem,4vw,2.75rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  margin-bottom:clamp(1.5rem,3vw,2.25rem);
 }
-.services__title{ display:flex; align-items:baseline; gap:1.5rem; flex-wrap:wrap }
-.services__title .sec-title{ margin-bottom:0 }
+.services__title{ display:flex; align-items:baseline; gap:1.25rem; flex-wrap:wrap }
+.services__title .sec-title{ margin-bottom:0; font-size:clamp(1.7rem,2.7vw,2.4rem) }
 .services__all{
   display:inline-flex; align-items:center; gap:.35rem;
   font-weight:500; font-size:1.05rem; color:var(--muted);
@@ -382,15 +382,14 @@ button,input,select,textarea{ font:inherit; color:inherit }
   aspect-ratio:4/3; overflow:hidden; border-radius:var(--r);
   background:var(--surface-2); margin-bottom:1.35rem;
 }
-.svc__art img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease) }
-.svc:hover .svc__art img{ transform:scale(1.04) }
+.svc__art img{ width:100%; height:100%; object-fit:cover }
 .svc__label{
-  font-size:.78rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:.8rem;
+  font-size:.74rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:.7rem;
 }
 .svc__text{
-  font-size:clamp(1.05rem,1rem + .3vw,1.25rem); line-height:1.45; color:var(--text);
-  margin-bottom:1rem;
+  font-size:clamp(1rem,.95rem + .3vw,1.15rem); line-height:1.5; color:var(--text);
+  margin-bottom:.9rem; max-width:34rem;
 }
 .svc__text strong{ font-weight:600 }
 .svc__link{
