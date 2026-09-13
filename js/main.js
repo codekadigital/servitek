@@ -20,7 +20,7 @@
       const light = root.getAttribute('data-theme') === 'light';
       themeBtn.setAttribute('aria-pressed', String(light));
       themeBtn.setAttribute('aria-label', light ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
-      if (meta) meta.setAttribute('content', light ? '#ECEBE4' : '#0B0B0C');
+      if (meta) meta.setAttribute('content', light ? '#F4F3EF' : '#0F0F10');
     };
     syncBtn();
     themeBtn.addEventListener('click', () => {
@@ -43,8 +43,10 @@
     hdr.classList.toggle('hdr--stuck', y > 24);
     totop.classList.toggle('is-on', y > 700);
 
-    const max = document.documentElement.scrollHeight - innerHeight;
-    progress.style.width = max > 0 ? `${(y / max) * 100}%` : '0%';
+    if (progress) {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = max > 0 ? `${(y / max) * 100}%` : '0%';
+    }
     ticking = false;
   };
   addEventListener('scroll', () => {
@@ -131,7 +133,7 @@
   /* ── Spotlight que sigue al cursor ────────────────────────── */
   if (!reduced && matchMedia('(pointer: fine)').matches) {
     const spot = $('.spotlight');
-    addEventListener('pointermove', (e) => {
+    if (spot) addEventListener('pointermove', (e) => {
       spot.style.setProperty('--mx', `${e.clientX}px`);
       spot.style.setProperty('--my', `${e.clientY}px`);
     }, { passive: true });

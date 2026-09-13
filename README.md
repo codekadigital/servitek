@@ -102,13 +102,18 @@ Los dos afiches muestran páginas de Facebook distintas (`serelectacna` y
 
 ## Imágenes
 
+**Pendiente:** la portada ocupa toda la pantalla y hoy usa `foto-motores.webp`, que es
+vertical y pequeña (481 px de ancho), por lo que en escritorio se ve algo borrosa.
+Pedir al cliente una foto **horizontal de al menos 2000 px de ancho** (taller, motor,
+tablero) y reemplazar el `src` de `.hero__media img` en `index.html`.
+
 El sitio usa fotos reales del cliente, optimizadas a WebP:
 
 | Archivo | Dónde aparece |
 |---|---|
 | `logo-servitek.png` | Logo real, recortado en círculo con fondo transparente (header y footer) |
-| `foto-diagnostico.webp` | Hero — técnico midiendo un tablero |
-| `foto-motores.webp` | Tarjeta "Motores y bombas" y marco de Rebobinado |
+| `foto-motores.webp` | Fondo de la portada, tarjeta "Motores y bombas" y sección Rebobinado |
+| `foto-diagnostico.webp` | Reservada (ya no se usa en la portada) |
 | `foto-tableros.webp` | Tarjeta "Instalaciones y tableros" |
 | `foto-electrodomesticos.webp` | Tarjeta "Electrodomésticos" |
 | `og-servitek.png` | Vista previa al compartir (1200×630) |
@@ -122,5 +127,5 @@ reales de la nueva foto. Las fotos se optimizaron con `sharp` (WebP calidad 80).
 - Respeta `prefers-reduced-motion`: todas las animaciones se desactivan.
 - Navegable por teclado, con `skip-link` y `:focus-visible` visible.
 - Marcado `ElectricalContractor` de Schema.org para búsqueda local.
-- Único recurso externo: Google Fonts (Anton, Barlow, IBM Plex Mono).
+- Único recurso externo: Google Fonts (Montserrat, Poppins).
   Para máxima velocidad, descargar los `.woff2` a `assets/fonts/` y auto-alojarlos.
