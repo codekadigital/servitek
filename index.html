@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/styles.css?v=3">
 
 <script type="application/ld+json">
 {
@@ -121,8 +121,7 @@
 
     <div class="cards">
       <article class="card" data-reveal>
-        <div class="card__art"><img src="assets/foto-motores.webp" alt="Técnico desmontando un motor eléctrico de su carcasa" width="481" height="850" loading="lazy"><span class="card__num">01</span></div>
-        <h3>Motores y bombas</h3>
+        <div class="card__art"><img src="assets/foto-motores.webp" alt="Técnico desmontando un motor eléctrico de su carcasa" width="481" height="850" loading="lazy"><h3>Motores y bombas</h3></div>
         <p>Instalación, mantenimiento, reparación y <strong>rebobinado</strong> de motores eléctricos y electrobombas de todas las potencias.</p>
         <ul class="card__list">
           <li>Rebobinado monofásico y trifásico</li>
@@ -133,8 +132,7 @@
       </article>
 
       <article class="card" data-reveal data-delay="1">
-        <div class="card__art"><img src="assets/foto-tableros.webp" alt="Técnico con casco revisando un tablero de control industrial" width="481" height="633" loading="lazy"><span class="card__num">02</span></div>
-        <h3>Instalaciones y tableros</h3>
+        <div class="card__art"><img src="assets/foto-tableros.webp" alt="Técnico con casco revisando un tablero de control industrial" width="481" height="633" loading="lazy"><h3>Instalaciones y tableros</h3></div>
         <p>Instalaciones <strong>industriales y domiciliarias</strong>, armado y mantenimiento de tableros eléctricos con planos y protecciones.</p>
         <ul class="card__list">
           <li>Tableros de fuerza y distribución</li>
@@ -145,8 +143,7 @@
       </article>
 
       <article class="card" data-reveal data-delay="2">
-        <div class="card__art"><img src="assets/foto-electrodomesticos.webp" alt="Técnico midiendo el motor compresor de un electrodoméstico" width="493" height="853" loading="lazy"><span class="card__num">03</span></div>
-        <h3>Electrodomésticos</h3>
+        <div class="card__art"><img src="assets/foto-electrodomesticos.webp" alt="Técnico midiendo el motor compresor de un electrodoméstico" width="493" height="853" loading="lazy"><h3>Electrodomésticos</h3></div>
         <p>Mantenimiento y reparación de <strong>refrigeradoras, lavadoras</strong>, secadoras y línea blanca en general. Servicio a domicilio.</p>
         <ul class="card__list">
           <li>Diagnóstico electrónico</li>
@@ -187,6 +184,10 @@
     <div class="rewind__art" data-reveal>
       <div class="rewind__frame">
         <img src="assets/foto-motores.webp" alt="Motor eléctrico desmontado para rebobinado" width="481" height="850" loading="lazy">
+      </div>
+      <div class="rewind__badge" aria-hidden="true">
+        <span class="rewind__badge-ico">✓</span>
+        <span><b>Garantía por escrito</b><br>en cada rebobinado</span>
       </div>
     </div>
 
@@ -257,15 +258,15 @@
     <div class="quotes__grid">
       <blockquote class="quote" data-reveal>
         <p>Se me quemó la bomba del pozo un domingo. Lunes temprano ya estaba rebobinada y funcionando. Trabajo serio.</p>
-        <footer><b>Luis Mamani</b><span>Agricultor · Valle de Sama</span></footer>
+        <footer><span class="quote__avatar" aria-hidden="true">LM</span><span><b>Luis Mamani</b><span>Agricultor · Valle de Sama</span></span></footer>
       </blockquote>
       <blockquote class="quote" data-reveal data-delay="1">
         <p>Armaron el tablero de mi taller completo, con planos y protecciones. Se nota que saben de lo que hablan.</p>
-        <footer><b>Rosa Chura</b><span>Taller metalmecánico · Tacna</span></footer>
+        <footer><span class="quote__avatar" aria-hidden="true">RC</span><span><b>Rosa Chura</b><span>Taller metalmecánico · Tacna</span></span></footer>
       </blockquote>
       <blockquote class="quote" data-reveal data-delay="2">
         <p>Mi lavadora tenía la tarjeta muerta. La revisaron, me explicaron todo y quedó como nueva.</p>
-        <footer><b>Javier Ticona</b><span>Cliente domiciliario</span></footer>
+        <footer><span class="quote__avatar" aria-hidden="true">JT</span><span><b>Javier Ticona</b><span>Cliente domiciliario</span></span></footer>
       </blockquote>
     </div>
     <p class="quotes__note" data-reveal>* Testimonios de ejemplo. Reemplazar por reseñas reales de Facebook.</p>
@@ -359,6 +360,23 @@
         <summary>¿Trabajan con empresas?</summary>
         <div class="acc__body"><p>Sí. Emitimos comprobantes y manejamos contratos de <strong>mantenimiento preventivo</strong> programado para plantas, minas y agroindustria.</p></div>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ FRANJA CTA -->
+<section class="band" aria-label="Llamado a la acción">
+  <div class="wrap">
+    <div class="band__panel" data-reveal>
+      <img class="band__img" src="assets/foto-tableros.webp" alt="" width="481" height="633" loading="lazy">
+      <div class="band__copy">
+        <h2 class="band__title">¿Se te quemó un motor o se cayó la energía?</h2>
+        <p class="band__lead">Cuéntanos qué pasó. Te decimos si conviene reparar y cuánto cuesta, sin compromiso.</p>
+        <a class="pill" href="https://wa.me/51977220049?text=Hola%20SERVITEK%2C%20necesito%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
+          <span>Escribir por WhatsApp</span>
+          <span class="pill__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg></span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
