@@ -279,6 +279,24 @@ button,input,select,textarea{ font:inherit; color:inherit }
   max-width:18ch; text-wrap:balance;
   margin-bottom:clamp(2rem,5vh,3.25rem);
 }
+.hero__link{
+  position:relative; display:inline-flex; align-items:center; gap:.6rem;
+  padding-bottom:.35rem; color:#fff;
+  font-weight:500; font-size:clamp(1.05rem,1rem + .4vw,1.3rem);
+  text-shadow:0 2px 14px rgba(0,0,0,.5);
+}
+.hero__link::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1.5px;
+  background:currentColor; opacity:.6; transform-origin:left;
+  transition:transform .4s var(--ease), opacity .3s;
+}
+.hero__link svg{
+  width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+  transition:transform .35s var(--ease);
+}
+.hero__link:hover::after{ opacity:1 }
+.hero__link:hover svg{ transform:translateX(5px) }
+
 .hero__tag{
   margin-top:auto; max-width:24ch;
   font-family:var(--display); font-weight:500;
