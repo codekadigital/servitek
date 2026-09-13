@@ -139,6 +139,30 @@
     }, { passive: true });
   }
 
+  /* ── Carrusel de servicios ────────────────────────────────── */
+  const track = $('#servicesTrack');
+  if (track) {
+    const btns = $$('.services__btn');
+    const step = () => {
+      const card = track.querySelector('.svc');
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : 320;
+    };
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      btns.forEach((b) => {
+        const dir = Number(b.dataset.dir);
+        b.disabled = dir < 0 ? track.scrollLeft <= 2 : track.scrollLeft >= max;
+      });
+    };
+    btns.forEach((b) => b.addEventListener('click', () => {
+      track.scrollBy({ left: step() * Number(b.dataset.dir), behavior: reduced ? 'auto' : 'smooth' });
+    }));
+    track.addEventListener('scroll', sync, { passive: true });
+    addEventListener('resize', sync);
+    sync();
+  }
+
   /* ── Acordeón: solo uno abierto ───────────────────────────── */
   const accs = $$('.acc');
   accs.forEach((acc) => {
