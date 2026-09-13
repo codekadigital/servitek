@@ -33,7 +33,7 @@ def head(title, desc, canonical, p, og_img):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{p}css/styles.css?v=5">'''
+<link rel="stylesheet" href="{p}css/styles.css?v=6">'''
 
 
 def header(p, home):
@@ -42,8 +42,8 @@ def header(p, home):
 <header class="hdr hdr--solid" id="hdr">
   <div class="hdr__inner">
     <a class="brand" href="{home}" aria-label="Servitek, inicio">
-      <img src="{p}assets/logo-servitek.png" alt="" width="40" height="40" class="brand__mark">
-      <span class="brand__text">SERVITEK</span>
+      <img src="{p}assets/logo-servitek.png" alt="" width="64" height="64" class="brand__mark">
+      <span class="brand__text"><strong>SERVITEK</strong><em>Técnicos especializados</em></span>
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="{home}#servicios">Servicios</a>

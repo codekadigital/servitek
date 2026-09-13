@@ -13,9 +13,9 @@
   --line-2:    rgba(255,255,255,.16);
 
   /* Tinta */
-  --text:      #F4F3EE;
-  --muted:     #ABAAA3;
-  --muted-2:   #77766F;
+  --text:      #FCFCFA;
+  --muted:     #C2C1BA;
+  --muted-2:   #8E8D86;
 
   /* Acentos */
   --yellow:     #FFD84D;
@@ -125,23 +125,31 @@ button,input,select,textarea{ font:inherit; color:inherit }
 }
 .hdr__inner{
   max-width:calc(var(--wrap) + 2rem); margin-inline:auto;
-  padding:1.1rem clamp(1.25rem,3vw,2.5rem);
+  padding:.9rem clamp(1.25rem,3vw,2.5rem);
   display:flex; align-items:center; gap:clamp(1.5rem,3vw,2.75rem);
   transition:padding .3s var(--ease);
 }
-.hdr--stuck .hdr__inner{ padding-block:.75rem }
+.hdr--stuck .hdr__inner{ padding-block:.6rem }
 
-.brand{ display:flex; align-items:center; gap:.7rem; margin-right:auto }
-.brand__mark{ width:40px; height:40px; flex:none; transition:transform .5s var(--ease) }
+.brand{ display:flex; align-items:center; gap:.85rem; margin-right:auto }
+.brand__mark{
+  width:64px; height:64px; flex:none;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.45));
+  transition:transform .5s var(--ease), width .3s var(--ease), height .3s var(--ease);
+}
 .brand:hover .brand__mark{ transform:rotate(-10deg) }
-.brand__text{
-  font-family:var(--display); font-weight:700; font-size:1.15rem;
-  letter-spacing:.05em; line-height:1;
+.hdr--stuck .brand__mark{ width:50px; height:50px }
+.brand__text{ display:flex; flex-direction:column; gap:.2rem; line-height:1 }
+.brand__text strong{
+  font-family:var(--display); font-weight:700; font-size:1.3rem; letter-spacing:.05em;
+}
+.brand__text em{
+  font-style:normal; font-size:.72rem; font-weight:500; letter-spacing:.02em; opacity:.85;
 }
 
 .nav{ display:flex; align-items:center; gap:clamp(1.25rem,2.5vw,2.25rem) }
 .nav a{
-  font-weight:500; font-size:.95rem; opacity:.9;
+  font-weight:500; font-size:.95rem; opacity:1;
   position:relative; padding:.35rem 0; transition:opacity .25s;
 }
 .nav a::after{
@@ -257,7 +265,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .hero__media::after{
   content:''; position:absolute; inset:0;
   background:
-    linear-gradient(105deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.36) 48%, rgba(0,0,0,.14) 100%),
+    linear-gradient(105deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.4) 48%, rgba(0,0,0,.16) 100%),
     linear-gradient(180deg, rgba(0,0,0,.42) 0%, transparent 28%, transparent 62%, rgba(0,0,0,.6) 100%);
 }
 .hero__inner{
@@ -268,7 +276,8 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .hero__title{
   font-family:var(--display); font-weight:500;
   font-size:clamp(2.8rem,6.8vw,6.2rem);
-  line-height:1.02; letter-spacing:-.035em;
+  line-height:1.02; letter-spacing:-.035em; color:#fff;
+  text-shadow:0 2px 24px rgba(0,0,0,.45);
   max-width:18ch; text-wrap:balance;
   margin-bottom:clamp(2rem,5vh,3.25rem);
 }
@@ -276,7 +285,8 @@ button,input,select,textarea{ font:inherit; color:inherit }
   margin-top:auto; max-width:24ch;
   font-family:var(--display); font-weight:500;
   font-size:clamp(1.1rem,1.2rem + .6vw,1.75rem); line-height:1.25;
-  letter-spacing:-.01em; text-wrap:balance;
+  letter-spacing:-.01em; text-wrap:balance; color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.5);
 }
 .hero__explore{
   position:absolute; right:calc(clamp(1.5rem,4.5vw,4rem) + 4.5rem); bottom:clamp(1.75rem,4vw,3rem);
@@ -361,13 +371,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   width:7px; height:7px; border-radius:50%; background:var(--yellow);
 }
 
-.card__link{
-  margin:auto .8rem 0; width:fit-content;
-  display:inline-flex; gap:.5rem; align-items:center;
-  font-weight:500; font-size:.95rem; color:var(--text);
-}
-.card__link span{ transition:transform .3s var(--ease) }
-.card__link:hover span{ transform:translateX(5px) }
+.card__cta{ margin:auto .8rem 0; width:fit-content; padding:.8rem 1.4rem }
 
 /* ══════════════════════════════════ CIFRAS */
 .stats{ padding-block:0 var(--sec) }
@@ -852,6 +856,8 @@ button,input,select,textarea{ font:inherit; color:inherit }
   .hero__explore{ right:auto; left:clamp(1.5rem,4.5vw,4rem) }
 
   .hdr__cta{ display:none }
+  .brand__mark{ width:52px; height:52px }
+  .brand__text strong{ font-size:1.1rem }
   .burger{ display:flex }
   .nav{
     position:fixed; inset:0 0 0 auto; width:min(84vw,340px);
