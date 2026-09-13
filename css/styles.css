@@ -339,6 +339,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 /* ══════════════════════════════════ SERVICIOS (carrusel a lo ancho) */
 .services{ padding-block:var(--sec) }
 .services__head{
+  max-width:none;                       /* a todo el ancho, como el carrusel */
   display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
   margin-bottom:clamp(1.5rem,3vw,2.25rem);
 }
@@ -361,12 +362,11 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .services__btn[disabled]{ color:var(--muted-2); cursor:default }
 
 .services__track{
-  --edge:max(var(--gut), calc((100% - var(--wrap)) / 2 + var(--gut)));
   display:flex; gap:clamp(1.25rem,2vw,1.75rem);
   overflow-x:auto; overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;
-  padding-inline:var(--edge) var(--gut);
-  scroll-padding-inline-start:var(--edge);
+  padding-inline:var(--gut);
+  scroll-padding-inline-start:var(--gut);
   scrollbar-width:none; -ms-overflow-style:none;
   cursor:grab;
 }
@@ -375,7 +375,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .services__track:focus-visible{ outline-offset:-2px }
 
 .svc{
-  flex:0 0 clamp(280px,42vw,600px); scroll-snap-align:start;
+  flex:0 0 clamp(280px,29vw,600px); scroll-snap-align:start;
   display:flex; flex-direction:column;
 }
 .svc__art{
