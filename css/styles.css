@@ -409,25 +409,26 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .services__btn[disabled]{ opacity:0; pointer-events:none }
 :root[data-theme="light"] .services__btn{ background:#fff }
 
-/* ══════════════════════════════════ CIFRAS */
-.stats{ padding-block:0 var(--sec) }
-.stats__grid{
-  display:grid; gap:2rem 1rem;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  padding:clamp(2.25rem,5vw,3.5rem) clamp(1.5rem,4vw,3rem);
+/* ══════════════════════════════════ POR QUÉ SERVITEK */
+.why{ padding-block:0 var(--sec) }
+.why__grid{
+  list-style:none;
+  display:grid; gap:2rem 1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  padding:clamp(2rem,4.5vw,3.25rem) clamp(1.5rem,4vw,3rem);
   background:var(--yellow); color:var(--yellow-ink);
   border-radius:var(--r-lg);
 }
-.stat{ text-align:left }
-.stat__num{
-  display:block; font-family:var(--display); font-weight:600;
-  font-size:clamp(2.6rem,5.5vw,4.4rem); line-height:1;
-  letter-spacing:-.03em; font-variant-numeric:tabular-nums;
+.why__item{ display:flex; flex-direction:column; gap:.6rem }
+.why__ico{
+  display:grid; place-items:center; width:3rem; height:3rem; border-radius:50%;
+  background:rgba(21,20,18,.1); margin-bottom:.4rem;
 }
-.stat__lbl{
-  display:block; margin-top:.55rem;
-  font-size:.92rem; font-weight:500; color:rgba(21,20,18,.72);
+.why__ico svg{ width:1.5rem; height:1.5rem }
+.why__item h3{
+  font-family:var(--display); font-weight:600; font-size:1.2rem; letter-spacing:-.02em;
 }
+.why__item p{ font-size:.93rem; line-height:1.5; color:rgba(21,20,18,.78) }
 
 /* ══════════════════════════════════ REBOBINADO */
 .rewind{ padding-block:var(--sec); background:var(--surface); border-block:1px solid var(--line) }
@@ -917,7 +918,6 @@ button,input,select,textarea{ font:inherit; color:inherit }
   .svc{ flex-basis:min(80vw,340px); height:520px }
   .services__btn{ display:none }
   .band__panel{ min-height:380px }
-  .stat + .stat::before{ display:none }
   .ftr__grid{ grid-template-columns:1fr }
   .ftr__bottom{ justify-content:center; text-align:center }
   .wa{ width:54px; height:54px }

@@ -104,7 +104,6 @@ cliente antes de que el sitio salga a producción:
 
 | Dónde | Qué revisar |
 |---|---|
-| `index.html` → sección `.stats` | 12 años, 1500 motores, 24 h, 6 meses de garantía |
 | `index.html` → sección `.quotes` | Los 3 testimonios son inventados. Usar reseñas reales de Facebook |
 | `index.html` → `.faq` | Plazos y política de garantía |
 | `index.html`, `sitemap.xml`, `robots.txt` → URLs | Apuntan a `codekadigital.github.io/servitek`; cambiar a `gruposervitek.pe` cuando el dominio esté activo |
