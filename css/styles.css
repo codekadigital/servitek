@@ -23,6 +23,8 @@
   --yellow-ink: #151412;   /* texto sobre amarillo, fijo en ambos temas */
   --ink:        #0F0F10;   /* negro fijo (botón oscuro del header) */
   --paper:      #FFFFFF;   /* blanco fijo (botón principal del hero) */
+  --action:     #FE2C55;   /* rojo de acción: botones de contacto y cotización */
+  --action-2:   #FF4B6E;
   --wa:         #25D366;
   --danger:     #E5484D;
 
@@ -165,16 +167,12 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .hdr__cta{
   display:inline-flex; align-items:center;
   padding:.85rem 1.6rem; border-radius:999px;
-  background:var(--ink); color:#fff;
-  font-weight:500; font-size:.95rem; white-space:nowrap;
-  box-shadow:0 10px 30px -14px rgba(0,0,0,.8);
+  background:var(--action); color:#fff;
+  font-weight:600; font-size:.95rem; white-space:nowrap;
+  box-shadow:0 12px 30px -12px rgba(254,44,85,.7);
   transition:transform .3s var(--ease), background .25s;
 }
-.hdr__cta:hover{ transform:translateY(-2px); background:#000 }
-.hdr--stuck .hdr__cta,
-.hdr--solid .hdr__cta{ background:var(--text); color:var(--bg); box-shadow:none }
-.hdr--stuck .hdr__cta:hover,
-.hdr--solid .hdr__cta:hover{ background:var(--yellow); color:var(--yellow-ink) }
+.hdr__cta:hover{ transform:translateY(-2px); background:var(--action-2) }
 
 .theme{
   flex:none; display:grid; place-items:center;
@@ -214,10 +212,10 @@ button,input,select,textarea{ font:inherit; color:inherit }
 .btn .ico--arrow{ fill:none; transition:transform .3s var(--ease) }
 .btn:hover .ico--arrow{ transform:translateX(4px) }
 
-.btn--volt{ background:var(--yellow); color:var(--yellow-ink) }
+.btn--volt{ background:var(--action); color:#fff; font-weight:600 }
 .btn--volt:hover{
-  background:var(--yellow-2); transform:translateY(-2px);
-  box-shadow:0 18px 30px -18px rgba(255,216,77,.7);
+  background:var(--action-2); transform:translateY(-2px);
+  box-shadow:0 18px 30px -16px rgba(254,44,85,.7);
 }
 
 .btn--ghost{
@@ -239,7 +237,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
 }
 .pill__arrow{
   display:grid; place-items:center; width:52px; height:52px; border-radius:50%;
-  background:var(--yellow); color:var(--yellow-ink);
+  background:var(--action); color:#fff;
   transition:transform .4s var(--ease);
 }
 .pill__arrow svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round }
@@ -873,7 +871,7 @@ button,input,select,textarea{ font:inherit; color:inherit }
   .nav__cta{
     display:inline-flex; margin-top:.5rem;
     padding:.85rem 1.4rem; border-radius:999px;
-    background:var(--yellow); color:var(--yellow-ink);
+    background:var(--action); color:#fff; font-weight:600;
   }
   .nav__cta::after{ display:none }
 
